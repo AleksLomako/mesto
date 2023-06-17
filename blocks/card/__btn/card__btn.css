@@ -1,0 +1,15 @@
+.card__btn {
+    background: url(../../../images/icon-card-button.svg);
+    width: 22px;
+    height: 19px;
+    padding: 0px;
+    border: 0px;
+    cursor: pointer;
+}
+.card__btn:hover {
+    opacity: 0.5;
+}
+.card__btn:active {
+    background: url(../../../images/icon-card-button-active.svg);
+    opacity: 1.0;
+}
