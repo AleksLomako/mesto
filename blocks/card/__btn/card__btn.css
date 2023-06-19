@@ -9,7 +9,3 @@
 .card__btn:hover {
     opacity: 0.5;
 }
-.card__btn:active {
-    background: url(../../../images/icon-card-button-active.svg);
-    opacity: 1.0;
-}

@@ -3,6 +3,7 @@
     flex-direction:column;
     align-items: center;
     gap: 23px;
+    text-align: center;
 }
 @media screen and (min-width: 924px) {
     .profile__card {
