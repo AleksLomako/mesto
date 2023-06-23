@@ -4,6 +4,7 @@
     border-radius: 10px;
     color: #000000;
     box-sizing: border-box;
+    width: 100%;
     max-width: 430px;
     position: relative;
     display: flex;
