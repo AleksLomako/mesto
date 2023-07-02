@@ -3,7 +3,7 @@
     max-height: 75vh;
     min-height: 299px;
     min-width: 240px;
-    object-fit: cover;;
+    object-fit: cover;
 }
 @media screen and (min-width: 924px) {
     .popup__image {
