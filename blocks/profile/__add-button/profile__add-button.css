@@ -1,4 +1,4 @@
-.profile__add {
+.profile__add-button {
     background: url(../../../images/icon-profile-add-button-mobile.svg);
     background-size: auto;
     background-repeat: no-repeat;
@@ -11,11 +11,11 @@
     padding: 0px;
     cursor: pointer;
 }
-.profile__add:hover {
+.profile__add-button:hover {
     opacity: 0.6;
 }
 @media screen and (min-width: 924px) {
-    .profile__add {
+    .profile__add-button {
         background: url(../../../images/icon-profile-add-button-desktop.svg);
         min-width: 150px;
         background-size: auto;
