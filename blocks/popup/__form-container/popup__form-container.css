@@ -1,0 +1,10 @@
+.popup__form-container {
+    padding: 0px;
+    margin: 0px 0px 30px 0px;
+    border: 0px;
+    min-height: 101px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 13px;
+    justify-content: space-between;
+}

@@ -13,7 +13,8 @@ const popupImage = document.querySelector('.popup_type_image');
 
 const closeButtonProfileElement = document.querySelector ('.popup__close-button_type_profile');
 const closeButtonPlaceElement = document.querySelector('.popup__close-button_type_place');
-const closeButtonImageElement = document.querySelector('.popup__close-button_type_image')
+const closeButtonImageElement = document.querySelector('.popup__close-button_type_image');
+
 
 const profileFormElement = document.querySelector('.popup__form_type_profile');
 const cardFormElement = document.querySelector('.popup__form_type_place');
