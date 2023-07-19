@@ -37,25 +37,24 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
       buttonElement.classList.add(config.inactiveButtonClass);
       buttonElement.disabled = true;
-
   } else {
       buttonElement.classList.remove(config.inactiveButtonClass);
       buttonElement.disabled =false;
   }
 };
+
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, config);
-  
   inputList.forEach((inputElement) => {
       inputElement.addEventListener ('input', function () {
           checkInputValidity(formElement, inputElement, config);
-          
           toggleButtonState(inputList, buttonElement, config);
       });
   });
 };
+
 const enableValidation = (config) => {
   const formList =Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {

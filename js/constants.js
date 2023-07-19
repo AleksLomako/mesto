@@ -11,6 +11,9 @@ const popupEditProfileElement = document.querySelector('.popup_type_profile');
 const popupAddPlaceElement = document.querySelector('.popup_type_place');
 const popupImage = document.querySelector('.popup_type_image');
 
+const popupPhoto = document.querySelector('.popup__image');
+const popupTitle = document.querySelector('.popup__text');
+
 const closeButtonProfileElement = document.querySelector ('.popup__close-button_type_profile');
 const closeButtonPlaceElement = document.querySelector('.popup__close-button_type_place');
 const closeButtonImageElement = document.querySelector('.popup__close-button_type_image');
@@ -18,7 +21,10 @@ const closeButtonImageElement = document.querySelector('.popup__close-button_typ
 
 const profileFormElement = document.querySelector('.popup__form_type_profile');
 const cardFormElement = document.querySelector('.popup__form_type_place');
-let nameInput = profileFormElement.querySelector('input[name="name"]');
-let jobInput = profileFormElement.querySelector('input[name="job"]');
-let placeNameInput = cardFormElement.querySelector('input[name="place-name"]');
-let placePhotoInput = cardFormElement.querySelector('input[name="place-link"]');
+const nameInput = profileFormElement.querySelector('input[name="name"]');
+const jobInput = profileFormElement.querySelector('input[name="job"]');
+const placeNameInput = cardFormElement.querySelector('input[name="place-name"]');
+const placePhotoInput = cardFormElement.querySelector('input[name="place-link"]');
+
+const cardSubmitButton = document.querySelector('.popup__save-button_type_place');
+

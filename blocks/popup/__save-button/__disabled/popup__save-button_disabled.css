@@ -3,3 +3,6 @@
     color: rgba(196, 196, 196, 1);
     border: 1px solid;
 }
+.popup__save-button_disabled:hover {
+    opacity: 1;
+}
