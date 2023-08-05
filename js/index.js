@@ -1,3 +1,6 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
 //Открытие попапа
 function openPopup(popup){
     popup.classList.add('popup_opened');
@@ -10,6 +13,8 @@ function closePopup(popup){
     document.removeEventListener('keydown', closePopupByEsc);
 };
 
+export {openPopup, closePopup}
+
 //Закрытие попапа по ESC
 function closePopupByEsc(evt) {
     if (evt.key === "Escape") {
@@ -17,6 +22,19 @@ function closePopupByEsc(evt) {
         closePopup(popupOpened);
     };
 };
+
+// Закрытие попапа на оверлей
+function closePopupByOverlay(){
+    const popupsElements = document.querySelectorAll('.popup');
+    popupsElements.forEach((popup) => {
+        popup.addEventListener('click', (e) => {
+            if (e.target.classList.contains("popup") ){
+                closePopup(popup);
+            };
+        });
+    });
+};
+closePopupByOverlay();
 
 // Сохранение данных в Profile
 function handleProfileFormSubmit (evt) {
@@ -39,64 +57,22 @@ aboutButtonElement.addEventListener('click', () => {
     openPopup(popupEditProfileElement);
 });
 
-//Создание карточки
-function createCard(name, link) {
-    const cardElement = cardsTemplate.querySelector('.card').cloneNode(true);
-    const cardImage = cardElement.querySelector('.card__image');
-    cardImage.src = link;
-    cardImage.alt = name;
-    cardElement.querySelector('.card__title').textContent = name;
-
-    //Лайк карточки
-    const cardLikeElement = cardElement.querySelector('.card__like');
-    cardLikeElement.addEventListener('click', () => {
-    cardLikeElement.classList.toggle('card__like_active');
-    });
-    //Удаление карточки
-    const deleteCardButton = cardElement.querySelector('.card__delete');
-        deleteCardButton.addEventListener('click', () => {
-            const cardItem = deleteCardButton.closest('.card');
-            cardItem.remove();
-        });
-    // Попап карточки
-    cardImage.addEventListener('click', () => {
-        popupPhoto.src = cardImage.src;
-        popupTitle.textContent = cardImage.alt;
-        popupPhoto.alt = cardImage.alt;
-        openPopup(popupImage);
-    })
-    return cardElement;
-};
-
 // Добавляем карточки при загрузке
 initialCards.forEach(function(item) {
-    const cardElement = createCard(item.name, item.link)
-    photoCardsElement.append(cardElement);
+    const card = new Card(cardsTemplate, item.name, item.link)
+    photoCardsElement.append(card.generateCard())
 });
 
 //Сохранение новой карточки
 function createCardSubmit (evt) {
     evt.preventDefault();
-    const cardElement = createCard(placeNameInput.value, placePhotoInput.value);
-    photoCardsElement.prepend(cardElement);
+    const card = new Card(cardsTemplate, placeNameInput.value, placePhotoInput.value)
+    photoCardsElement.prepend(card.generateCard());
     cardFormElement.reset();
     cardSubmitButton.classList.add(CONFIG_FORM_VALIDATION.inactiveButtonClass);
     cardSubmitButton.disabled = true;
     closePopup(popupAddPlaceElement);
 };
-
-// Закрытие попапа на оверлей
-function closePopupByOverlay(){
-    const popupsElements = document.querySelectorAll('.popup');
-    popupsElements.forEach((popup) => {
-        popup.addEventListener('click', (e) => {
-            if (e.target.classList.contains("popup") ){
-                closePopup(popup);
-            };
-        });
-    });
-};
-closePopupByOverlay();
 
 //Обработчики
 addButtonElement.addEventListener('click', () => {
@@ -105,9 +81,19 @@ addButtonElement.addEventListener('click', () => {
 });
 closeButtonProfileElement.addEventListener('click', () =>  closePopup(popupEditProfileElement));
 closeButtonPlaceElement.addEventListener('click', () => closePopup(popupAddPlaceElement));
-closeButtonImageElement.addEventListener('click', () => closePopup(popupImage));
 profileFormElement.addEventListener('submit', handleProfileFormSubmit);
 cardFormElement.addEventListener('submit', createCardSubmit);
 
+//Форма
+const formEnableValidation = (config) => {
+    const formList =Array.from(document.querySelectorAll(config.formSelector));
+    formList.forEach((form) => {
+        form.addEventListener('submit',(evt) => {
+            evt.preventDefault();
+        });
+        const formValidator = new FormValidator(form, config)
+        formValidator.enableValidation();
+    });
+};
 
-enableValidation(CONFIG_FORM_VALIDATION);
+formEnableValidation(CONFIG_FORM_VALIDATION);

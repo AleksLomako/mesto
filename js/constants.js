@@ -11,13 +11,8 @@ const popupEditProfileElement = document.querySelector('.popup_type_profile');
 const popupAddPlaceElement = document.querySelector('.popup_type_place');
 const popupImage = document.querySelector('.popup_type_image');
 
-const popupPhoto = document.querySelector('.popup__image');
-const popupTitle = document.querySelector('.popup__text');
-
 const closeButtonProfileElement = document.querySelector ('.popup__close-button_type_profile');
 const closeButtonPlaceElement = document.querySelector('.popup__close-button_type_place');
-const closeButtonImageElement = document.querySelector('.popup__close-button_type_image');
-
 
 const profileFormElement = document.querySelector('.popup__form_type_profile');
 const cardFormElement = document.querySelector('.popup__form_type_place');
@@ -28,3 +23,11 @@ const placePhotoInput = cardFormElement.querySelector('input[name="place-link"]'
 
 const cardSubmitButton = document.querySelector('.popup__save-button_type_place');
 
+const CONFIG_FORM_VALIDATION = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__save-button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_visible'
+}; 

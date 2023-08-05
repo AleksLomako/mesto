@@ -1,5 +1,5 @@
 .popup__input-error_visible {
     visibility: visible;
     display: block;
-    height: 30px;
+    min-height: 30px;
 }
