@@ -1,28 +1,3 @@
-// Создаем переменные
-const photoCardsElement = document.querySelector('.photo-cards');
-const cardsTemplate = document.querySelector('.cards-template').content;
-
-const aboutButtonElement = document.querySelector('.profile__edit-button');
-const addButtonElement = document.querySelector('.profile__add-button');
-const profileTitleElement = document.querySelector('.profile__title');
-const profileSubtitleElement = document.querySelector('.profile__subtitle');
-
-const popupEditProfileElement = document.querySelector('.popup_type_profile');
-const popupAddPlaceElement = document.querySelector('.popup_type_place');
-const popupImage = document.querySelector('.popup_type_image');
-
-const closeButtonProfileElement = document.querySelector ('.popup__close-button_type_profile');
-const closeButtonPlaceElement = document.querySelector('.popup__close-button_type_place');
-
-const profileFormElement = document.querySelector('.popup__form_type_profile');
-const cardFormElement = document.querySelector('.popup__form_type_place');
-const nameInput = profileFormElement.querySelector('input[name="name"]');
-const jobInput = profileFormElement.querySelector('input[name="job"]');
-const placeNameInput = cardFormElement.querySelector('input[name="place-name"]');
-const placePhotoInput = cardFormElement.querySelector('input[name="place-link"]');
-
-const cardSubmitButton = document.querySelector('.popup__save-button_type_place');
-
 const CONFIG_FORM_VALIDATION = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -31,3 +6,32 @@ const CONFIG_FORM_VALIDATION = {
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_visible'
 }; 
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+export {initialCards,CONFIG_FORM_VALIDATION};

@@ -17,11 +17,11 @@
                         <img src="images/profile-avatar.jpg" alt="Фото Ж.И.Кусто" class="profile__avatar">
                         <div class="profile__info">
                             <h1 class="profile__title">Жак-Ив Кусто</h1>
-                            <button type="button" class="profile__edit-button"></button>
+                            <button aria-label="Редактировать" type="button" class="profile__edit-button"></button>
                             <p class="profile__subtitle">Исследователь океана</p>
                         </div>
                     </div>
-                    <button type="button" class="profile__add-button"></button>
+                    <button aria-label="Добавить" type="button" class="profile__add-button"></button>
                 </section>
                 <section class="photo-cards">
                 </section>
@@ -32,7 +32,7 @@
 
             <div class="popup popup_type_profile">
                 <div class="popup__content">
-                    <button type="button" class="popup__close-button popup__close-button_type_profile"></button>
+                    <button aria-label="Закрыть" type="button" class="popup__close-button popup__close-button_type_profile"></button>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <form name="add__profile" class="popup__form popup__form_type_profile" novalidate>
                         <div class="popup__form-container">
@@ -48,7 +48,7 @@
 
             <div class="popup popup_type_place">
                 <div class="popup__content">
-                    <button type="button" class="popup__close-button popup__close-button_type_place"></button>
+                    <button aria-label="Закрыть" type="button" class="popup__close-button popup__close-button_type_place"></button>
                     <h2 class="popup__title">Новое место</h2>
                     <form name="add__place" class="popup__form popup__form_type_place" novalidate>
                         <div class="popup__form-container">
@@ -64,7 +64,7 @@
 
             <div class="popup popup_type_image">
                 <div class="popup__content-image">
-                    <button type="button" class="popup__close-button popup__close-button_type_image"></button>
+                    <button aria-label="Закрыть" type="button" class="popup__close-button popup__close-button_type_image"></button>
                     <img src="#" alt="" class="popup__image">
                     <p class="popup__text">Test</p>
                 </div>
@@ -73,16 +73,14 @@
             <template class="cards-template">
                 <article class="card">
                     <img class="card__image" src="#" alt="">
-                    <button class="card__delete"></button>
+                    <button aria-label="Удалить" class="card__delete"></button>
                     <div class="card__item">
                         <h2 class="card__title"></h2>
-                        <button class="card__like"></button>
+                        <button aria-label="Лайк" class="card__like"></button>
                     </div>
                 </article>
             </template>
         </div>
-        <script src="./js/cards.js"></script>
-        <script src="./js/constants.js"></script>
         <script type="module" src="./js/index.js"></script>
 
     </body>
